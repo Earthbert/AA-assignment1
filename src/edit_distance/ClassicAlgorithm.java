@@ -28,13 +28,14 @@ public class ClassicAlgorithm {
         return dm[str1.length()][str2.length()];
     }
 
-    public static ArrayList<String> calculateEditDistances(Input input) {
+    public static ArrayList<EditDistanceOutput> calculateEditDistances(Input input) {
         String[] dictionary = input.getDictionary();
-        ArrayList<String> output = new ArrayList<>();
+        ArrayList<EditDistanceOutput> output = new ArrayList<>();
 
         for (final String s : dictionary) {
-            if (levenshteinDistance(s, input.getTargetWord()) <= input.getMaxDistance()) {
-                output.add(s);
+            int distance = levenshteinDistance(s, input.getTargetWord());
+            if (distance <= input.getMaxDistance()) {
+                output.add(new EditDistanceOutput(distance, s));
             }
         }
         return output;

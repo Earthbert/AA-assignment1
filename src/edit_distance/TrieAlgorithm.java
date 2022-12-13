@@ -16,8 +16,8 @@ public class TrieAlgorithm {
         return trie;
     }
 
-    public static ArrayList<String> calculateEditDistances(Input input) {
-        ArrayList<String> foundWords = new ArrayList<>();
+    public static ArrayList<EditDistanceOutput> calculateEditDistances(Input input) {
+        ArrayList<EditDistanceOutput> foundWords = new ArrayList<>();
         Trie trie = createTrie(input.getDictionary());
         ArrayList<TrieNode> helperArray = trie.dfs();
 
@@ -40,7 +40,7 @@ public class TrieAlgorithm {
                 }
             }
             if (helperArray.get(i).getWord() != null && dm[i][target.length()] <= input.getMaxDistance()) {
-                foundWords.add(helperArray.get(i).getWord());
+                foundWords.add(new EditDistanceOutput(dm[i][target.length()], helperArray.get(i).getWord()));
             }
         }
 
