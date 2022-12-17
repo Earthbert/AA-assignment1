@@ -1,6 +1,5 @@
 package input;
 
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Input {
@@ -8,7 +7,7 @@ public class Input {
     private final String targetWord;
     private final String[] dictionary;
 
-    public Input(Scanner testInput) throws FileNotFoundException {
+    public Input(Scanner testInput) {
         int numWords = testInput.nextInt();
         dictionary = new String[numWords];
         maxDistance = testInput.nextInt();

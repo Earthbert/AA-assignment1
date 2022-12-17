@@ -3,11 +3,9 @@ package edit_distance;
 import java.util.ArrayList;
 
 import input.Input;
-import utils.Utils;
 
 public class ClassicAlgorithm {
     private static int levenshteinDistance(String str1, String str2) {
-        // Create distances matrix
         int[][] dm = new int[str1.length() + 1][str2.length() + 1];
 
         for (int i = 0; i <= str1.length(); i++) {
