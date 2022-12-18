@@ -11,10 +11,15 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class RunClassicAlgorithm {
-    private final static String INPUT_FILE = "in/test6.in";
-    private final static String OUTPUT_FILE = "output/test6.out";
+    private static String INPUT_FILE = "in/test.in";
+    private static String OUTPUT_FILE = "output/test.out";
 
     public static void main(String[] args) throws IOException {
+        if (args.length > 0) {
+            INPUT_FILE = "in/test" + args[0] + ".in";
+            OUTPUT_FILE = "output/test" + args[0] + ".out";
+        }
+
         Scanner testInput = new Scanner(new File(INPUT_FILE));
         Input input = new Input(testInput);
 

@@ -1,5 +1,4 @@
 MAKEFLAGS += --silent
-JC = javac
 BUILD_PATH = ./build/
 
 SOURCE_FILES = \
@@ -17,10 +16,10 @@ build: $(SOURCE_FILES)
 	javac -d $(BUILD_PATH) $(SOURCE_FILES)
 
 run-p1:
-	java -cp $(BUILD_PATH) RunClassicAlgorithm
+	java -cp $(BUILD_PATH) RunClassicAlgorithm $(ARGS)
 
 run-p2:
-	java -cp $(BUILD_PATH) RunTrieAlgorithm
+	java -cp $(BUILD_PATH) RunTrieAlgorithm $(ARGS)
 
 # Replace with "rm -rf build" if on Linux
 clean:
